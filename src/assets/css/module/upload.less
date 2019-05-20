@@ -1,0 +1,249 @@
+#disk-page {
+  position: relative;
+  .file-upload-wrap {
+    font-size: 12px;
+    position: fixed;
+    bottom: 15px;
+    right: 20px;
+    width: 735px;
+    z-index: 9999;
+    .file-upload-view {
+      width: 735px;
+      overflow: hidden;
+      position: relative;
+      background-color: #fff;
+      border: 1px solid #f0f0f0;
+      -webkit-box-shadow: -4px -4px 13px 0 rgba(213, 217, 220, 0.33);
+      box-shadow: -4px -4px 13px 0 rgba(213, 217, 220, 0.33);
+      border-radius: 2px;
+      z-index: 120;
+      //-webkit-transform-origin: left bottom;
+      //-ms-transform-origin: left bottom;
+      //transform-origin: left bottom;
+      //-webkit-transform: scale(0, 0);
+      //-ms-transform: scale(0, 0);
+      //transform: scale(0, 0);
+      //-webkit-transition: all 0.3s;
+      //-o-transition: all 0.3s;
+      //transition: all 0.3s;
+      .dp-f {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+      }
+      .upload-view-header {
+        width: 100%;
+        height: 38px;
+        overflow: hidden;
+        line-height: 38px;
+        font-size: 14px;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        .head-completed {
+          padding-left: 10px;
+          i {
+            position: relative;
+            top: 2px;
+            margin-right: 5px;
+          }
+        }
+        .success {
+          margin-right: 40px;
+        }
+        .upload-close {
+          .min i,.close i{
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            vertical-align: middle;
+          }
+          .icon-window-fold {
+            transform: rotate(180deg);
+          }
+          .min {
+            cursor: pointer;
+          }
+          .close {
+            margin-right: 10px;
+            margin-left: 20px;
+            cursor: pointer;
+          }
+        }
+      }
+      .upload-view-title {
+        width: 100%;
+        height: 24px;
+        line-height: 24px;
+        background: #f9f9f9;
+        text-align: center;
+        div {
+          float: left;
+        }
+      }
+      .progress-wrapper {
+        cursor: pointer;
+        display: inline-block;
+        vertical-align: middle;
+        .progress {
+          display: block;
+          width: 50px;
+          height: 50px;
+          border-radius: 100%;
+          border: 3px solid #e9eef2;
+          svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+          }
+          circle {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 998;
+          }
+        }
+        .btn-icon::after {
+           visibility: hidden;
+           content: "";
+           position: absolute;
+           z-index: -1;
+           top: 2px;
+           left: 2px;
+           bottom: 2px;
+           right: 2px;
+           border-radius: 100%;
+           background-color: #f5f8fa;
+         }
+        .btn-icon {
+          border: none;
+          z-index: -1;
+          border-radius: 50%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 50px;
+          background-color: transparent;
+          height: 50px;
+          font-size: 14px;
+          color: #000;
+        }
+      }
+      .progress-wrapper:hover {
+        .btn-icon::after{
+          visibility: visible;
+        }
+      }
+    }
+
+    .title-file-name {
+      width: 225px;
+      height: 24px;
+      max-height: 256px;
+      padding-left: 45px;
+      overflow-y: auto;
+    }
+    .title-file-size {
+      width: 150px;
+    }
+    .title-target-dir {
+      width: 120px;
+    }
+    .title-upload-status {
+      width: 100px;
+    }
+    .upload-cancel {
+      width: 100px;
+      text-align: center;
+      color: #107FFC;
+      padding-left: 10px;
+      .icon {
+        display: inline-block;
+        vertical-align: middle;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+      }
+    }
+    .upload-status {
+      text-align: center;
+      padding-left: 10px;
+      .icon {
+        display: inline-block;
+        vertical-align: middle;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        margin-right: 5px;
+      }
+    }
+    .upload-view-body {
+      display: block;
+      height: 360px;
+      .uploader-list {
+        ul {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          .upload-file-item {
+            width: 100%;
+            height: 45px;
+            line-height: 45px;
+            list-style: none;
+            text-align: center;
+            -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+            display: block;
+            position: relative;
+            border-bottom: 1px solid #F7F7F7;
+            box-sizing: border-box;
+          }
+          .upload-file-item:hover {
+            background-color: #F9F9F9;
+          }
+          .theme-light .my-svg-sprite {
+            fill: #107ffc;
+          }
+          svg:not(:root) {
+            overflow: hidden;
+          }
+          svg:not(:root) {
+            overflow: hidden;
+          }
+        }
+      }
+    }
+    .css-ellipsis {
+      overflow: hidden;
+      -o-text-overflow: ellipsis;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}
+
+#_dnd._dnd {
+  display: block;
+  right: 0;
+  height: 0;
+  overflow: hidden;
+  -moz-box-sizing: border-box;
+  filter: progid:DXImageTransform.Microsoft.Shadow(color=#AAAAAA, direction=90, strength=2) progid:DXImageTransform.Microsoft.Shadow(color=#AAAAAA,direction=180,strength=2);
+  _width: 99.82%;
+  *zoom: 1;
+  position: fixed;
+  z-index: -1;
+  background-color: rgb(249, 245, 245);
+  opacity: 0.5;
+  border: 5px dashed;
+  box-sizing: border-box;
+  top: 0px;
+  left: 0px;
+  display: none;
+}
+#_dnd._dnd.ui-dnd {
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  display: block;
+}

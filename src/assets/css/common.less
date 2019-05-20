@@ -1,0 +1,403 @@
+@import '~iview/src/styles/index.less';
+@import 'icon.less';
+@import '../../components/context-menu/ctx-menu.less';
+
+// Prefix
+@css-prefix : ivu-;
+@css-prefix-iconfont : ivu-icon;
+
+// Color
+@primary-color : #0188fb;
+@info-color : #EBEEF5;
+@success-color : #19be6b;
+@processing-color : @primary-color;
+@warning-color : #ff9900;
+@error-color : #F56C6C;
+@normal-color : #e6ebf1;
+@link-color : #0188fb;
+@link-hover-color : tint(@link-color, 20%);
+@link-active-color : shade(@link-color, 5%);
+@selected-color : fade(@primary-color, 90%);
+@tooltip-color : #fff;
+@subsidiary-color : #808695;
+@rate-star-color : #f5a623;
+
+// Base
+@body-background : #fff;
+@component-background : #fff;
+@font-family : "-apple-system,BlinkMacSystemFont,PingFang SC,Helvetica Neue,STHeiti,Microsoft Yahei,Tahoma,Simsun,sans-serif";
+@code-family : Consolas,
+Menlo,
+Courier,
+monospace;
+@title-color : #17233d;
+@text-color : #515a6e;
+@font-size-base : 14px;
+@font-size-small : 12px;
+@font-size-large : 16px;
+@line-height-base : 1.5;
+@line-height-computed : floor((@font-size-base * @line-height-base));
+@border-radius-base : 3px;
+@border-radius-small : 2px;
+@cursor-disabled : not-allowed;
+
+// Border color
+@border-color-base : #dcdee2; // outside
+@border-color-split : #e8eaec; // inside
+@border-width-base : 1px; // width of the border for a component
+@border-style-base : solid; // style of a components border
+
+// Background color
+@background-color-base : #f7f7f7; // base
+@background-color-select-hover: @input-disabled-bg;
+@tooltip-bg : rgba(70, 76, 91, .9);
+@head-bg : #f9fafc;
+@table-thead-bg : #f8f8f9;
+@table-td-stripe-bg : #f8f8f9;
+@table-td-hover-bg : #ebf7ff;
+@table-td-highlight-bg : #ebf7ff;
+@menu-dark-title : #515a6e;
+@menu-dark-active-bg : #363e4f;
+@menu-dark-subsidiary-color : rgba(255, 255, 255, .7);
+@menu-dark-group-title-color : rgba(255, 255, 255, .36);
+@date-picker-cell-hover-bg : #e1f0fe;
+
+// Shadow
+@shadow-color : rgba(0, 0, 0, .2);
+@shadow-base : @shadow-down;
+@shadow-card : 0 1px 1px 0 rgba(0, 0, 0, .1);
+@shadow-up : 0 -1px 6px @shadow-color;
+@shadow-down : 0 1px 6px @shadow-color;
+@shadow-left : -1px 0 6px @shadow-color;
+@shadow-right : 1px 0 6px @shadow-color;
+
+// Button
+@btn-font-weight : normal;
+@btn-padding-base : 5px 15px 6px;
+@btn-padding-large : 6px 15px 6px 15px;
+@btn-padding-small : 1px 7px 2px;
+@btn-padding-base-icon : 5px 15px 6px;
+@btn-padding-large-icon : 6px 15px 6px 15px;
+@btn-padding-small-icon : 1px 7px 2px;
+@btn-font-size : 12px;
+@btn-font-size-large : 14px;
+@btn-border-radius : 2px;
+@btn-border-radius-small: 3px;
+@btn-group-border : shade(@primary-color, 5%);
+
+@btn-disable-color : #c5c8ce;
+@btn-disable-bg : @background-color-base;
+@btn-disable-border : @border-color-base;
+
+@btn-default-color : @text-color;
+@btn-default-bg : #fff;
+@btn-default-border : @border-color-base;
+
+@btn-primary-color : #fff;
+@btn-primary-bg : @primary-color;
+
+@btn-ghost-color : @text-color;
+@btn-ghost-bg : #fff;
+@btn-ghost-border : @border-color-base;
+
+@btn-circle-size : 32px;
+@btn-circle-size-large : 36px;
+@btn-circle-size-small : 24px;
+
+// Layout and Grid
+@grid-columns : 24;
+@grid-gutter-width : 0;
+@layout-body-background : #f5f7f9;
+@layout-header-background : #515a6e;
+@layout-header-height : 64px;
+@layout-header-padding : 0 50px;
+@layout-footer-padding : 24px 50px;
+@layout-footer-background : @layout-body-background;
+@layout-sider-background : @layout-header-background;
+@layout-trigger-height : 48px;
+@layout-trigger-color : #fff;
+@layout-zero-trigger-width : 36px;
+@layout-zero-trigger-height : 42px;
+
+// Legend
+@legend-color : #999;
+
+// Input
+@input-height-base : 32px;
+@input-height-large : 36px;
+@input-height-small : 24px;
+
+@input-padding-horizontal : 7px;
+@input-padding-vertical-base : 4px;
+@input-padding-vertical-small: 1px;
+@input-padding-vertical-large: 6px;
+
+@input-placeholder-color : @btn-disable-color;
+@input-color : @text-color;
+@input-border-color : @border-color-base;
+@input-bg : #fff;
+@input-group-bg : #f8f8f9;
+
+@input-hover-border-color : @primary-color;
+@input-focus-border-color : @primary-color;
+@input-disabled-bg : #f3f3f3;
+
+// Tag
+@tag-font-size : 12px;
+
+// Media queries breakpoints
+// Extra small screen / phone
+@screen-xs : 480px;
+@screen-xs-min : @screen-xs;
+@screen-xs-max : (@screen-xs-min - 1);
+
+// Small screen / tablet
+@screen-sm : 576px;
+@screen-sm-min : @screen-sm;
+@screen-sm-max : (@screen-sm-min - 1);
+
+// Medium screen / desktop
+@screen-md : 768px;
+@screen-md-min : @screen-md;
+@screen-md-max : (@screen-md-min - 1);
+
+// Large screen / wide desktop
+@screen-lg : 992px;
+@screen-lg-min : @screen-lg;
+@screen-lg-max : (@screen-lg-min - 1);
+
+// Extra large screen / full hd
+@screen-xl : 1200px;
+@screen-xl-min : @screen-xl;
+@screen-xl-max : (@screen-xl-min - 1);
+
+// Extra extra large screen / large descktop
+@screen-xxl : 1600px;
+@screen-xxl-min : @screen-xxl;
+@screen-xxl-max : (@screen-xxl-min - 1);
+
+// Z-index
+@zindex-spin : 8;
+@zindex-affix : 10;
+@zindex-back-top : 10;
+@zindex-select : 900;
+@zindex-modal : 1000;
+@zindex-drawer : 1000;
+@zindex-message : 1010;
+@zindex-notification : 1010;
+@zindex-tooltip : 1060;
+@zindex-transfer : 1060;
+@zindex-loading-bar : 2000;
+@zindex-spin-fullscreen : 2010;
+
+// Animation
+@animation-time : .3s;
+@transition-time : .2s;
+@ease-in-out : ease-in-out;
+
+// Slider
+@slider-color : tint(@primary-color, 20%);
+@slider-height : 4px;
+@slider-margin : 16px 0;
+@slider-button-wrap-size : 18px;
+@slider-button-wrap-offset : -4px;
+@slider-disabled-color : #ccc;
+
+// Avatar
+@avatar-size-base: 32px;
+@avatar-size-lg: 40px;
+@avatar-size-sm: 24px;
+@avatar-font-size-base: 18px;
+@avatar-font-size-lg: 24px;
+@avatar-font-size-sm: 14px;
+@avatar-bg: #ccc;
+@avatar-color: #fff;
+@avatar-border-radius: @border-radius-small;
+
+// Anchor
+@anchor-border-width: 2px;
+
+.ivu-btn:focus,
+.ivu-checkbox-focus,
+input:focus {
+  box-shadow: none !important;
+}
+
+;
+
+.ivu-icon-ios-loading:before {
+  content: "\e635";
+  font-family: icon;
+}
+
+.ivu-icon-ios-close:before {
+  content: "\e6fe";
+  font-family: icon;
+}
+
+.ivu-btn>.ivu-icon {
+  line-height: 1;
+}
+
+.scrollbar-y::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  background-color: #d6d6d6;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 3px solid transparent;
+}
+
+.scrollbar-y::-webkit-scrollbar {
+  width: 13px;
+  background: transparent;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+.clearfix:after {
+  *zoom: 1;
+  content: "";
+  display: block;
+  clear: both;
+}
+
+
+.snack-loading-warpper {
+  padding: 8px 10px;
+  line-height: 18px;
+  font-size: 14px;
+  position: fixed;
+  word-wrap: break-word;
+  color: #fff;
+  text-align: center;
+  background: rgba(0, 0, 0, .75);
+  background-size: cover;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 686px;
+  box-sizing: border-box;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, .15), 0 2px 5px 0 rgba(0, 0, 0, .25);
+  pointer-events: auto;
+  border-radius: 2px;
+  z-index: 10003;
+  transform: translateX(-50%);
+  left: 50%;
+  top: 104px;
+
+  .snack-loading-container {
+    display: flex;
+    align-items: center;
+
+    .loading-circle-spin {
+      position: relative;
+      width: 20px;
+      height: 20px;
+
+      .loading-circle-spin-container {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -webkit-flex-flow: row nowrap;
+        flex-flow: row nowrap;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        width: 76px;
+        height: 76px;
+        transform: translate(-38%, -45%) scale(.21);
+        position: static;
+
+        .loading-circle-spin-item {
+          position: absolute;
+          border-radius: 50%;
+          // background: rgba(0,0,0,.8);
+          background: #fff;
+          -webkit-animation: loading-circle-spin-rotate 1s infinite ease-out;
+          animation: loading-circle-spin-rotate 1s infinite ease-out;
+        }
+
+        .loading-circle-spin-item:nth-child(1) {
+          width: 18px;
+          height: 18px;
+          -webkit-transform-origin: center 47px;
+          transform-origin: center 47px;
+        }
+
+        .loading-circle-spin-item:nth-child(2) {
+          width: 14px;
+          height: 14px;
+          opacity: .9;
+          -webkit-animation-delay: 70ms;
+          animation-delay: 70ms;
+          -webkit-transform-origin: center 45px;
+          transform-origin: center 45px;
+        }
+
+        .loading-circle-spin-item:nth-child(3) {
+          width: 12px;
+          height: 12px;
+          opacity: .8;
+          -webkit-animation-delay: .13s;
+          animation-delay: .13s;
+          -webkit-transform-origin: center 44px;
+          transform-origin: center 44px;
+        }
+
+        .loading-circle-spin-item:nth-child(4) {
+          width: 9px;
+          height: 9px;
+          opacity: .7;
+          -webkit-animation-delay: .19s;
+          animation-delay: .19s;
+          -webkit-transform-origin: center 42.5px;
+          transform-origin: center 42.5px;
+        }
+      }
+    }
+
+    .snack-loading-text {
+      margin-left: 5px;
+    }
+  }
+}
+
+@keyframes loading-circle-spin-rotate {
+  40% {
+    -webkit-transform: rotate(350deg);
+    transform: rotate(350deg)
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg)
+  }
+}
+
+html,
+body {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -ktml-user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
